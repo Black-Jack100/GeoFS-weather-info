@@ -1,3 +1,12 @@
+// ==UserScript==
+// @name         GeoFS Weather Info
+// @version      0.1
+// @description  Adds the ability for user to check the weather
+// @author       Black-Jack100
+// @match        https://www.geo-fs.com/geofs.php?v=*
+// @match        https://*.geo-fs.com/geofs.php*
+// @grant        none
+// ==/UserScript==
 (function () {
     'use strict';
 
