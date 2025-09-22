@@ -102,7 +102,7 @@
     function createToggleButton() {
         const toggleBtn = document.createElement('button');
         toggleBtn.className = 'toggle-btn';
-        toggleBtn.textContent = 'Weather';
+        toggleBtn.textContent = 'Weather🌨';
         toggleBtn.onclick = () => window.geofsWeatherApp.toggle();
         document.body.appendChild(toggleBtn);
         return toggleBtn;
@@ -115,7 +115,7 @@
             this.toggleBtn = createToggleButton();
             this.lastMetarData = null;
             this.setupEventListeners();
-            console.log('GeoFS Weather App loaded! Create by blackjack.25');
+            console.log('GeoFS Weather App loaded! Create by blackjack100');
         }
 
         setupEventListeners() {
@@ -168,7 +168,7 @@
                 const response = await fetch(apiUrl);
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 const data = await response.json();
-                if (data.length === 0) throw new Error(`No METAR data found for ${icao}. Check the ICAO code.`);
+                if (data.length === 0) throw new Error(`No METAR data found for ${icao}. Check the airport code.`);
                 this.lastMetarData = data[0];
                 this.updateWeatherDisplay(this.lastMetarData);
                 this.applyToGeoFS();
@@ -245,10 +245,10 @@
                 // Apply to GeoFS
                 if (typeof geofs !== 'undefined' && geofs.api?.setWeather) {
                     geofs.api.setWeather(weatherObject);
-                    console.log('Weather applied to GeoFS:', weatherObject);
+                    console.log('Weather info applied to GeoFS:', weatherObject);
                 }
             } catch (error) {
-                console.error('Error applying weather to GeoFS:', error);
+                console.error('Error applying weather info to GeoFS:', error);
             }
         }
 
